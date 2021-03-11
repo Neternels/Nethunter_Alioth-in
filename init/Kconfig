@@ -1242,8 +1242,6 @@ config CPUSET_ASSIST
 	help
 	  This option enables in-kernel overrides for cpuset values.
 
-	  If unsure, say N.
-
 if CPUSET_ASSIST
 
 config CPUSET_AUDIO_APP
@@ -1289,6 +1287,16 @@ config CPUSET_TOP_APP
 	  The CPU mask to use for the top-app cpuset.
 
 endif
+
+config STUNE_ASSIST
+	bool "SchedTune configuration helper"
+	depends on SCHED_TUNE
+	depends on ANDROID
+	help
+	  This option enables the configuration of default SchedTune
+	  parameters from kernel.
+
+	  If unsure, say N.
 
 config SYSFS_DEPRECATED
 	bool "Enable deprecated sysfs features to support old userspace tools"
